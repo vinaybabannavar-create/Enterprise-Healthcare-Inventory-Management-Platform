@@ -19,12 +19,12 @@ import { useState } from 'react';
 import UserProfileModal from './UserProfileModal';
 
 const menuItems = [
-    { icon: LayoutDashboard, label: 'Overview', href: '/dashboard' },
-    { icon: Package, label: 'Inventory', href: '/dashboard/inventory' },
-    { icon: ShoppingCart, label: 'Orders', href: '/dashboard/orders' },
-    { icon: Bell, label: 'Alerts', href: '/dashboard/alerts' },
-    { icon: FileText, label: 'Reports', href: '/dashboard/reports' },
-    { icon: Users, label: 'Staff', href: '/dashboard/staff' },
+    { icon: LayoutDashboard, label: 'Overview', href: '/' },
+    { icon: Package, label: 'Inventory', href: '/inventory' },
+    { icon: ShoppingCart, label: 'Orders', href: '/orders' },
+    { icon: Bell, label: 'Alerts', href: '/alerts' },
+    { icon: FileText, label: 'Reports', href: '/reports' },
+    { icon: Users, label: 'Staff', href: '/staff' },
 ];
 
 export default function Sidebar() {
@@ -76,13 +76,6 @@ export default function Sidebar() {
                         <p className="text-[10px] text-slate-500 font-extrabold uppercase tracking-tight">
                             {user?.role} Profile
                         </p>
-                    </button>
-                    <button
-                        onClick={logout}
-                        className="flex items-center gap-3 w-full px-4 py-3 rounded-xl hover:bg-red-500/10 hover:text-red-500 transition-all text-left"
-                    >
-                        <LogOut className="w-5 h-5" />
-                        <span className="font-medium">Logout</span>
                     </button>
                 </div>
             </aside>

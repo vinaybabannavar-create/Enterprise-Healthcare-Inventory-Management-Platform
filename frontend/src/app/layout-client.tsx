@@ -1,25 +1,14 @@
 'use client';
 
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import { useAuthStore } from '@/store/useAuthStore';
 import Sidebar from '@/components/Sidebar';
+import { useAuthStore } from '@/store/useAuthStore';
 
-export default function DashboardLayout({
+export default function RootLayoutClient({
     children,
 }: {
     children: React.ReactNode;
 }) {
-    const { token, user } = useAuthStore();
-    const router = useRouter();
-
-    useEffect(() => {
-        if (!token) {
-            router.push('/login');
-        }
-    }, [token, router]);
-
-    if (!token) return null;
+    const { user } = useAuthStore();
 
     return (
         <div className="min-h-screen bg-slate-50">

@@ -19,8 +19,14 @@ interface AuthState {
 export const useAuthStore = create<AuthState>()(
     persist(
         (set) => ({
-            user: null,
-            token: null,
+            user: {
+                id: 0,
+                username: 'Guest',
+                email: 'guest@example.com',
+                role: 'admin',
+                hospital_name: 'General Hospital'
+            },
+            token: 'dummy-token',
             setAuth: (user, token, refreshToken) => {
                 localStorage.setItem('token', token);
                 localStorage.setItem('refreshToken', refreshToken);

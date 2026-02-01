@@ -15,16 +15,10 @@ export default function NotFound() {
             </p>
             <div className="flex gap-4">
                 <Link
-                    href="/dashboard"
+                    href="/"
                     className="px-6 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
                 >
-                    Go to Dashboard
-                </Link>
-                <Link
-                    href="/login"
-                    className="px-6 py-2 bg-white border border-slate-200 text-slate-600 rounded-lg font-medium hover:bg-slate-50 transition-colors"
-                >
-                    Sign In
+                    Go to Home
                 </Link>
             </div>
             <p className="mt-12 text-slate-400 text-sm">

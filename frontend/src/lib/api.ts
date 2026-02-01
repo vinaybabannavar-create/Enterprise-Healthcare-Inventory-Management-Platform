@@ -43,12 +43,10 @@ api.interceptors.response.use(
                 } catch (refreshError) {
                     localStorage.removeItem('token');
                     localStorage.removeItem('refreshToken');
-                    window.location.href = '/login';
                     return Promise.reject(refreshError);
                 }
             } else {
                 localStorage.removeItem('token');
-                window.location.href = '/login';
             }
         }
         return Promise.reject(error);
