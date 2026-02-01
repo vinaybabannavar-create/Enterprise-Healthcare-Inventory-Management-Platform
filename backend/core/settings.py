@@ -166,10 +166,7 @@ REST_FRAMEWORK = {
 }
 
 # CORS configuration
-if DEBUG:
-    CORS_ALLOW_ALL_ORIGINS = True
-else:
-    CORS_ALLOWED_ORIGINS = os.environ.get('CORS_ALLOWED_ORIGINS', '').split(',')
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Media files
 MEDIA_URL = '/media/'

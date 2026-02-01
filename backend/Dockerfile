@@ -15,5 +15,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-# Default command, will be overridden by docker-compose for workers
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Collect static files
+RUN python manage.py collectstatic --noinput
+
+# Start command using gunicorn and handling Render's port
+CMD gunicorn core.wsgi:application --bind 0.0.0.0:$PORT
