@@ -18,5 +18,5 @@ COPY . .
 # Collect static files
 RUN python manage.py collectstatic --noinput
 
-# Start command using gunicorn and handling Render's port
-CMD gunicorn core.wsgi:application --bind 0.0.0.0:$PORT
+# Start command using uvicorn for ASGI/WebSocket support
+CMD uvicorn core.asgi:application --host 0.0.0.0 --port $PORT
